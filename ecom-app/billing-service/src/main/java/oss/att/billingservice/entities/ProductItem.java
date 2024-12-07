@@ -6,10 +6,10 @@ import lombok.*;
 import oss.att.billingservice.model.Product;
 
 @Entity
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder @ToString
 public class ProductItem {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Id //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String id;
     private String productId;
     @ManyToOne
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)

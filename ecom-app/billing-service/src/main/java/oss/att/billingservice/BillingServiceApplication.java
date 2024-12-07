@@ -14,9 +14,7 @@ import oss.att.billingservice.model.Product;
 import oss.att.billingservice.repository.BillRepository;
 import oss.att.billingservice.repository.ProductItemRepository;
 
-import java.util.Collection;
-import java.util.Date;
-import java.util.Random;
+import java.util.*;
 
 
 @SpringBootApplication
@@ -33,18 +31,20 @@ public class BillingServiceApplication {
                                         ProductRestClient productRestClient){
 
         return args -> {
-            Collection<Customer> customers = customerRestClient.getAllCustomers().getContent();
-            Collection<Product> products = productRestClient.getAllProducts().getContent();
+            List<Customer> customers = customerRestClient.getAllCustomers();
+            List<Product> products = productRestClient.getAllProducts();
 
             customers.forEach(customer -> {
                 Bill bill = Bill.builder()
                         .billingDate(new Date())
-                        .customerId(customer.getId())
+                        .id(UUID.randomUUID().toString())
+                        .customerId(Long.parseLong(customer.getId()))
                         .build();
                 billRepository.save(bill);
                 products.forEach(product -> {
                     ProductItem productItem = ProductItem.builder()
                             .bill(bill)
+                            .id(UUID.randomUUID().toString())
                             .productId(product.getId())
                             .quantity(1+new Random().nextInt(10))
                             .unitPrice(product.getPrice())

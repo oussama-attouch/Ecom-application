@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 @Entity
-@NoArgsConstructor @AllArgsConstructor @Getter @Setter @Builder
+@NoArgsConstructor @AllArgsConstructor @Getter @Setter @Builder @ToString
 public class Bill {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Id //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String id;
     private Date billingDate;
     private long customerId;
     @OneToMany(mappedBy = "bill")

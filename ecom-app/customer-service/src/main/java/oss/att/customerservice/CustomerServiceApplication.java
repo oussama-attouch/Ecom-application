@@ -26,17 +26,14 @@ public class  CustomerServiceApplication {
 			repoRestConfiguration.exposeIdsFor(Customer.class);
 			customerRepository.save(Customer.builder()
 					.name("o1")
-					.id(UUID.randomUUID().toString())
 					.email("o1@gmail.com")
 					.build());
 			customerRepository.save(Customer.builder()
 					.name("o2")
-					.id(UUID.randomUUID().toString())
 					.email("o2@gmail.com")
 					.build());
 			customerRepository.save(Customer.builder()
 					.name("o3")
-					.id(UUID.randomUUID().toString())
 					.email("3@gmail.com")
 					.build());
 			customerRepository.findAll().forEach(System.out::println);
