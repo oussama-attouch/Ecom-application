@@ -1,8 +1,11 @@
 package oss.att.orderservice.model;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Data @Getter
+@Setter
 public class Product {
     private Long id;
     private String name;

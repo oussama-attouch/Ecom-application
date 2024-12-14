@@ -3,6 +3,7 @@ package oss.att.inventoryservice;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import oss.att.inventoryservice.entities.Product;
@@ -22,19 +23,16 @@ public class InventoryServiceApplication {
             //restConfiguration.exposeIdsFor(Product.class);
             productRepository.save(Product.builder()
                     .name("Computer")
-                    .id(UUID.randomUUID().toString())
                     .price(3000)
                     .quantity(100)
                     .build());
             productRepository.save(Product.builder()
                     .name("Phone")
-                    .id(UUID.randomUUID().toString())
                     .price(5000)
                     .quantity(10)
                     .build());
             productRepository.save(Product.builder()
                     .name("Xbox")
-                    .id(UUID.randomUUID().toString())
                     .price(4000)
                     .quantity(50)
                     .build());

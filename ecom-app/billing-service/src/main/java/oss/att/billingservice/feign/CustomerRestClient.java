@@ -11,7 +11,7 @@ import java.util.List;
 @FeignClient(name = "customer-service")
 public interface CustomerRestClient {
     @GetMapping("/api/customers/{id}")
-    Customer getCustomerById(@PathVariable Long id);
+    Customer findCustomerById(@PathVariable Long id);
 
     @GetMapping("/api/customers")
     List<Customer> getAllCustomers();

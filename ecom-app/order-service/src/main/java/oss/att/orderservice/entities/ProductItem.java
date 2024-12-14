@@ -1,15 +1,19 @@
 package oss.att.orderservice.entities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import oss.att.orderservice.model.Product;
 
+import javax.persistence.*;
+
 @Entity
-@Data @NoArgsConstructor @AllArgsConstructor @Builder
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class ProductItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +28,8 @@ public class ProductItem {
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Order order;
 
-    public double getAmount(){
-        return price*quantity*(1-discount);
+    public double getAmount() {
+        return price * quantity * (1 - discount);
     }
 }
+

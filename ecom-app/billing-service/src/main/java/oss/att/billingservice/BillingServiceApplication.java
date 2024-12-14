@@ -25,29 +25,26 @@ public class BillingServiceApplication {
         SpringApplication.run(BillingServiceApplication.class, args);
     }
     @Bean
-    CommandLineRunner commandLineRunner(BillRepository billRepository,
-                                        ProductItemRepository productItemRepository,
-                                        CustomerRestClient customerRestClient,
-                                        ProductRestClient productRestClient){
-
+    CommandLineRunner start(BillRepository billRepository,
+                            ProductItemRepository productItemRepository,
+                            CustomerRestClient customerRestClient,
+                            ProductRestClient productRestClient){
         return args -> {
             List<Customer> customers = customerRestClient.getAllCustomers();
             List<Product> products = productRestClient.getAllProducts();
 
             customers.forEach(customer -> {
                 Bill bill = Bill.builder()
-                        .billingDate(new Date())
-                        .id(UUID.randomUUID().toString())
-                        .customerId(Long.parseLong(customer.getId()))
+                        .billDate(new Date())
+                        .customerId(customer.getId())
                         .build();
                 billRepository.save(bill);
                 products.forEach(product -> {
                     ProductItem productItem = ProductItem.builder()
                             .bill(bill)
-                            .id(UUID.randomUUID().toString())
                             .productId(product.getId())
                             .quantity(1+new Random().nextInt(10))
-                            .unitPrice(product.getPrice())
+                            .price(product.getPrice())
                             .build();
                     productItemRepository.save(productItem);
                 });
