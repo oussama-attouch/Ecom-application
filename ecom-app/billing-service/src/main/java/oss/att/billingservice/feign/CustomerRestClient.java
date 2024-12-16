@@ -17,3 +17,4 @@ public interface CustomerRestClient {
     List<Customer> getAllCustomers();
 
 }
+//on utilise feing Client pour faire la communication entre billing-service et customer-service
