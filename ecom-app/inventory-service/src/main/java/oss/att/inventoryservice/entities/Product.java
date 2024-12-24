@@ -15,8 +15,7 @@ import java.util.UUID;
 @Getter @Setter @ToString
 public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Use AUTO for UUID
-    private Long id;
+    private String id;
     private String name;
     private double price;
     private int quantity;

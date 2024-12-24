@@ -22,16 +22,19 @@ public class InventoryServiceApplication {
         return args -> {
             //restConfiguration.exposeIdsFor(Product.class);
             productRepository.save(Product.builder()
+                    .id(UUID.randomUUID().toString())
                     .name("Computer")
                     .price(3000)
                     .quantity(100)
                     .build());
             productRepository.save(Product.builder()
+                    .id(UUID.randomUUID().toString())
                     .name("Phone")
                     .price(5000)
                     .quantity(10)
                     .build());
             productRepository.save(Product.builder()
+                    .id(UUID.randomUUID().toString())
                     .name("Xbox")
                     .price(4000)
                     .quantity(50)
