@@ -19,7 +19,7 @@ import java.util.Arrays;
 @EnableWebSecurity
 // Active la configuration de la sécurité Web de Spring.
 public class SecurityConfig {
-    @Bean
+   @Bean
     // Déclare un bean pour le filtre de sécurité. Ce filtre définit les règles de sécurité de l'application.
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
@@ -31,9 +31,11 @@ public class SecurityConfig {
                 // Désactive la protection CSRF (Cross-Site Request Forgery), utile pour les APIs REST stateless.
                 .headers(h -> h.frameOptions(fo -> fo.disable()))
                 // Désactive les options de frame pour permettre l'accès au contenu comme la console H2 (en développement uniquement).
-                .authorizeHttpRequests(ar -> ar.requestMatchers("/h2-console/**").permitAll())
+                .authorizeHttpRequests(ar -> ar.requestMatchers("/h2-console/**").permitAll().requestMatchers("/api/products/auth").permitAll()) // Allow access to auth endpoint)
                 // Permet l'accès public (sans authentification) aux URL commençant par "/api/**" et "/h2-console/**".
                 .authorizeHttpRequests(ar -> ar.anyRequest().authenticated())
+                //Chaque fois une requet qui arrive vous ragarder la requete ,recheche une requete qui s'appel authorization, prendre
+                .oauth2ResourceServer(o2->o2.jwt(Customizer.withDefaults()))
                 // Exige une authentification pour toutes les autres requêtes.
                 .oauth2ResourceServer(o2->o2.jwt(Customizer.withDefaults()))
                 .build();

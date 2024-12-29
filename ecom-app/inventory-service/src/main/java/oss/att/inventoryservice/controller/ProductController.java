@@ -1,5 +1,6 @@
 package oss.att.inventoryservice.controller;
 
+import org.springframework.security.core.Authentication;
 import oss.att.inventoryservice.entities.Product;
 import oss.att.inventoryservice.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,6 @@ public class ProductController {
 
     @Autowired
     public ProductController(ProductRepository productRepository) {
-
         this.productRepository = productRepository;
     }
 
@@ -31,5 +31,10 @@ public class ProductController {
     @GetMapping("/{id}") // Fixed the mapping path
     public Optional<Product> getProductById(@PathVariable Long id) {
         return productRepository.findById(id); // Changed List<Product> to Optional<Product>
+    }
+
+    @GetMapping("/auth")
+    public Authentication authenticate(Authentication authentication) {
+        return authentication;
     }
 }
