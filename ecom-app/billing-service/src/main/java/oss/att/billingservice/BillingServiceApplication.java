@@ -30,7 +30,7 @@ public class BillingServiceApplication {
                             ProductRestClient productRestClient){
         return args -> {
             List<Customer> customers = customerRestClient.getAllCustomers();
-            List<Product> products = productRestClient.getAllProducts();
+           // List<Product> products = productRestClient.getAllProducts();
 
             customers.forEach(customer -> {
                 Bill bill = Bill.builder()
@@ -38,15 +38,15 @@ public class BillingServiceApplication {
                         .customerId(customer.getId())
                         .build();
                 billRepository.save(bill);
-                products.forEach(product -> {
-                    ProductItem productItem = ProductItem.builder()
-                            .bill(bill)
-                            .productId(product.getId())
-                            .quantity(1+new Random().nextInt(10))
-                            .price(product.getPrice())
-                            .build();
-                    productItemRepository.save(productItem);
-                });
+            /*products.forEach(product -> {
+                ProductItem productItem = ProductItem.builder()
+                        .bill(bill)
+                        .productId(product.getId())
+                        .quantity(1+new Random().nextInt(10))
+                        .price(product.getPrice())
+                        .build();
+                productItemRepository.save(productItem);
+            });*/
             });
         };
     }

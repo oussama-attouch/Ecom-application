@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/products")
+@RequestMapping("/api")
 public class ProductController {
     private final ProductRepository productRepository;
 
@@ -22,18 +22,20 @@ public class ProductController {
         this.productRepository = productRepository;
     }
 
-    @GetMapping
+    @GetMapping("/products")
+    //@PreAuthorize("hasAuthority('ADMIN')")
     public List<Product> getAllProducts() {
         return productRepository.findAll();
     }
 
     // Corrected method
-    @GetMapping("/{id}") // Fixed the mapping path
-    public Optional<Product> getProductById(@PathVariable Long id) {
-        return productRepository.findById(id); // Changed List<Product> to Optional<Product>
+    @GetMapping("/products/{id}")
+    //@PreAuthorize("hasAuthority('USER')")
+    public Product productById(@PathVariable String id){
+        return productRepository.findById((id));
     }
 
-    @GetMapping("/auth")
+    @GetMapping("/products/auth")
     public Authentication authenticate(Authentication authentication) {
         return authentication;
     }

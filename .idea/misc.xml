@@ -11,7 +11,13 @@
         <option value="$PROJECT_DIR$/ecom-app/gateway-service/pom.xml" />
         <option value="$PROJECT_DIR$/ecom-app/inventory-service/pom.xml" />
         <option value="$PROJECT_DIR$/ecom-app/order-service/pom.xml" />
+        <option value="$PROJECT_DIR$/../Workspace Microservices/ecom-app-web/ecom-web/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/../Workspace Microservices/ecom-app-web/ecom-web/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_22" project-jdk-name="openjdk-22" project-jdk-type="JavaSDK">

@@ -33,6 +33,7 @@ public class CustomerController {
     public List<Customer> getCustomers(){
         return customerRepository.findAll();
     }
+
     @GetMapping("fullCustomer")
     public List<CustomerProjection> getAllCustomers() {
         return customerRepository.findAllProjectedBy();
