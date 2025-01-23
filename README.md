@@ -14,8 +14,11 @@ Front-end (Angular)
 Consommation de l'API dans Angular
 
 ![product_list_ngOnitAng](https://github.com/user-attachments/assets/d0f87fcd-47a7-4d26-937c-ff057e7ecda9)
+
 ngOnInit() : Méthode appelée au chargement du composant.
+
 this.http.get(...) : Envoie une requête GET à l'API REST pour récupérer les données des produits.
+
 Projection fullProduct : Sert à inclure des détails supplémentaires dans les résultats.
 
 Affichage de la liste des produits.
