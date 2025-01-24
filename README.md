@@ -1,4 +1,4 @@
-﻿# Ecom-application
+![Capture d’écran 2025-01-24 125206](https://github.com/user-attachments/assets/c960b950-0349-4df1-9304-64ea8a83a52a)﻿# Ecom-application
 📚 Gestion des Produits
 -Ce projet illustre une API REST en Java (Spring Boot) combinée avec un front-end Angular pour récupérer et afficher une liste de produits depuis un service.
 
@@ -53,4 +53,17 @@ Front-end :
 ![orders_ang](https://github.com/user-attachments/assets/424f1fc7-aad6-4b8b-b912-011507856cdb)
 
 -Récupération et affichage des commandes d'un client spécifique.
+
+-Affichage des détails de la commande :
+
+![Capture d’écran 2025-01-24 124954](https://github.com/user-attachments/assets/5889a891-a1a1-4702-8293-e7c248660121)
+
+-Affichage des détails de la commande
+
+![Capture d’écran 2025-01-24 125206](https://github.com/user-attachments/assets/7ddb4253-cd8c-4cb4-85ea-d49893ccbb01)
+
+-Requête : Envoie une requête GET vers /order-service/fullOrder/{orderId} pour récupérer les détails d'une commande spécifique.
+
+
+
 
