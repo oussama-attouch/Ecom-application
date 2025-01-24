@@ -32,5 +32,10 @@ Récupération des informations sur les clients et leurs détails via des projec
 🖥️ Fonctionnalités Principales
 
 -Récupérer la liste de tous les clients.
+
 -Récupérer les détails d'un client spécifique par son ID.
+
 -Utiliser une projection pour obtenir une vue personnalisée des données clients.
+
+![customers_list](https://github.com/user-attachments/assets/610e48bc-bbc0-4d07-b71c-fad04c16fda1)
+
