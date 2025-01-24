@@ -9,7 +9,8 @@ Récupération de la liste de tous les produits.
 
 ![product_list_Controller](https://github.com/user-attachments/assets/061aab92-e79d-441a-a608-445d8ee6b039)
 
-Récupération des détails les produits.
+Récupération des détails d'un produit
+
 Front-end (Angular)
 Consommation de l'API dans Angular
 
