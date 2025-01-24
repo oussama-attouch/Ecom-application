@@ -39,3 +39,18 @@ Récupération des informations sur les clients et leurs détails via des projec
 
 ![customers_list](https://github.com/user-attachments/assets/610e48bc-bbc0-4d07-b71c-fad04c16fda1)
 
+📦 Gestion des Commandes
+
+Fonctionnalités principales
+
+Back-end :
+
+-Récupération d'une commande complète (avec détails du client et des produits).
+![orders](https://github.com/user-attachments/assets/7fce949b-006c-4610-a26b-f9300cedaf84)
+
+
+Front-end :
+![orders_ang](https://github.com/user-attachments/assets/424f1fc7-aad6-4b8b-b912-011507856cdb)
+
+-Récupération et affichage des commandes d'un client spécifique.
+
