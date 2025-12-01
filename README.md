@@ -2,7 +2,7 @@
 📚 Gestion des Produits
 -Ce projet illustre une API REST en Java (Spring Boot) combinée avec un front-end Angular pour récupérer et afficher une liste de produits depuis un service.
 
-🖥️ Fonctionnalités principales
+Fonctionnalités principales
 Back-end (Spring Boot)
 
 -Récupération de la liste de tous les produits.
@@ -26,10 +26,10 @@ Front-end (Angular)
 
 ![product_list](https://github.com/user-attachments/assets/0bb7517b-3dfb-4471-8328-90919dd725ea)
 
-📚 Service de Gestion des Clients
+*Service de Gestion des Clients:
 Récupération des informations sur les clients et leurs détails via des projections.
 
-🖥️ Fonctionnalités Principales
+*Fonctionnalités Principales
 
 -Récupérer la liste de tous les clients.
 
@@ -63,6 +63,7 @@ Front-end :
 ![Capture d’écran 2025-01-24 125206](https://github.com/user-attachments/assets/7ddb4253-cd8c-4cb4-85ea-d49893ccbb01)
 
 -Requête : Envoie une requête GET vers /order-service/fullOrder/{orderId} pour récupérer les détails d'une commande spécifique.
+
 
 
 
